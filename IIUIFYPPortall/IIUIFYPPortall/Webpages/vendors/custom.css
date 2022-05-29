@@ -1,0 +1,126 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background: white;
+}
+#side-menu-container{
+    position:absolute;
+    left:-200px;
+    width:200px;
+    height:92%;
+    background-color:rgba(20, 21, 22,1);
+    z-index:1;
+    transition:all 1s;
+}
+.side-menu{
+    display:block;
+    text-decoration: none;
+    list-style-type: none;
+    height:inherit;
+}
+.side-menu  li{
+    font-size: 20px;
+    width:inherit;
+    height:10%;
+    border-bottom: thin solid #787c80;
+    display:flex;
+    align-content: center;
+    line-height:20px;
+}
+.side-menu li a:hover{
+    background-color:#ffffff;
+    color:#000000;
+}
+
+.side-menu li a{
+    width:100%;
+    text-align: center;
+    padding-top:13px;
+    text-decoration: none;
+    color:rgb(245, 245, 245);
+}
+.side-active a{
+    background-color:#ffffff;
+    color:#000000 !important;
+}
+.toggle-menu{
+    display: inline-block;
+    font-size:30px;
+    margin-left:2%;
+    margin-right:2%;
+    padding:10px 0;
+    transition: all 1s;
+}
+.toggle-menu:hover, .toggle-menu:focus{
+    cursor : pointer;
+}
+.main-content{
+    transition: all 1s;
+}
+/* for toggling bar */
+.toggle{
+    left:0px!important;
+}
+/* for toggling main content */
+.toggle-main{
+    padding-left:200px;
+    transition: all 1s;
+}
+/*for button toggled*/
+.toggled-btn{
+    transform: rotate(180deg);
+    transition: all 1s;
+}
+@media only screen and (max-width:700px){
+    body{background-color:#302e2e;}
+}
+.top-nav{
+    width:100%;
+    height:60px;
+    background:#ffffff;
+    box-shadow: 0 1px 10px rgba(0,0,0,0.9);
+    justify-content: center; 
+    display: flexbox;
+}
+.top-nav .brand{
+    font-size:20px;
+    font-weight:900;
+    text-decoration: none;
+    color:black;
+    display:inline-flex;
+}
+.top-nav ul{
+    list-style: none;
+    display: inline-flex;
+    position:absolute;
+    top:0;
+    right:1%;
+}
+.top-nav ul li a{
+    text-decoration: none;
+    padding: 25px 15px 20px 15px;
+    
+}
+.top-nav ul li{
+    width:70px;
+    height:60px;
+    padding-top: 10%;
+}
+.top-nav ul li:hover{
+    background-color: #f3efef;
+    border-bottom: 2px solid black;
+}
+.active{
+    background-color: #f3efef;
+    border-bottom: 2px solid black;
+}
+.custom-form-btn{
+    width:75%;
+    height:40px;
+    border:none;
+    border-radius: 30px;
+    margin: 6% 0 0 12%;
+    font-size: 17px;
+}

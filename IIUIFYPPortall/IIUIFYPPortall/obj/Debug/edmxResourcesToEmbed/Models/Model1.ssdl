@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="20" />
+    <Property Name="DOB" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Announcement">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="GroupId" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="PanelId" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deadline" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Bid">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProjectId" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Documentation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="100" />
+    <Property Name="ProposalPath" Type="nvarchar" MaxLength="100" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="View" Type="bit" />
+    <Property Name="GroupId" Type="nvarchar" MaxLength="50" />
+    <Property Name="PanelId" Type="nvarchar" MaxLength="50" />
+    <Property Name="Reason" Type="nvarchar(max)" />
+    <Property Name="Remarks" Type="nvarchar(max)" />
+    <Property Name="Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Final">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Marks" Type="nvarchar" MaxLength="50" />
+    <Property Name="GroupId" Type="nvarchar" MaxLength="50" />
+    <Property Name="PanelId" Type="nvarchar" MaxLength="50" />
+    <Property Name="Remarks" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Group">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RegNo1" Type="nvarchar" MaxLength="50" />
+    <Property Name="RegNo2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Regno3" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="InternalExternal">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Marks" Type="nvarchar" MaxLength="50" />
+    <Property Name="GroupId" Type="nvarchar" MaxLength="50" />
+    <Property Name="PanelId" Type="nvarchar" MaxLength="50" />
+    <Property Name="Remarks" Type="nvarchar(max)" />
+    <Property Name="QA" Type="nvarchar" MaxLength="50" />
+    <Property Name="Documentation" Type="nvarchar" MaxLength="50" />
+    <Property Name="date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Panel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Teacher1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Teacher2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Teacher3" Type="nvarchar" MaxLength="50" />
+    <Property Name="GroupId1" Type="nvarchar" MaxLength="50" />
+    <Property Name="GroupId2" Type="nvarchar" MaxLength="50" />
+    <Property Name="GroupId3" Type="nvarchar" MaxLength="50" />
+    <Property Name="GroupId4" Type="nvarchar" MaxLength="50" />
+    <Property Name="GroupId5" Type="nvarchar" MaxLength="50" />
+    <Property Name="GroupId6" Type="nvarchar" MaxLength="50" />
+    <Property Name="GroupId7" Type="nvarchar" MaxLength="50" />
+    <Property Name="GroupId8" Type="nvarchar" MaxLength="50" />
+    <Property Name="GroupId9" Type="nvarchar" MaxLength="50" />
+    <Property Name="GroupId10" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Project">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="GroupId" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Proposal">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="100" />
+    <Property Name="ProposalPath" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="View" Type="bit" />
+    <Property Name="GroupId" Type="nvarchar" MaxLength="50" />
+    <Property Name="PanelId" Type="nvarchar" MaxLength="50" />
+    <Property Name="Reason" Type="nvarchar(max)" />
+    <Property Name="Remarks" Type="nvarchar(max)" />
+    <Property Name="Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="StudentId" />
+    </Key>
+    <Property Name="StudentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="DOB" Type="nvarchar" MaxLength="50" />
+    <Property Name="Department" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="ImagePath" Type="nvarchar" MaxLength="200" />
+    <Property Name="GroupId" Type="int" />
+    <Property Name="Cnic" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SupervisoryDemo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Marks" Type="nvarchar" MaxLength="50" />
+    <Property Name="GroupId" Type="nvarchar" MaxLength="50" />
+    <Property Name="PanelId" Type="nvarchar" MaxLength="50" />
+    <Property Name="Remarks" Type="nvarchar(max)" />
+    <Property Name="Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Teacher">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="20" />
+    <Property Name="DOB" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Qualification" Type="nvarchar" MaxLength="100" />
+    <Property Name="Specific_Feild" Type="nvarchar" MaxLength="100" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PanelId" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TeacherVerf">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DOB" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Template">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="100" />
+    <Property Name="FilePath" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Verfication">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DOB" Type="nvarchar" MaxLength="50" />
+    <Property Name="Regno" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="Database1ModelStoreContainer">
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Announcement" EntityType="Self.Announcement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bid" EntityType="Self.Bid" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Documentation" EntityType="Self.Documentation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Final" EntityType="Self.Final" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Group" EntityType="Self.Group" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InternalExternal" EntityType="Self.InternalExternal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Panel" EntityType="Self.Panel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Project" EntityType="Self.Project" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Proposal" EntityType="Self.Proposal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SupervisoryDemo" EntityType="Self.SupervisoryDemo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Teacher" EntityType="Self.Teacher" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TeacherVerf" EntityType="Self.TeacherVerf" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Template" EntityType="Self.Template" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Verfication" EntityType="Self.Verfication" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

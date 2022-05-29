@@ -1,0 +1,528 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="..\assets\img\IIUI-logo.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        IIUI-FYP Portal System
+    </title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <!-- CSS Files -->
+    <link href="../assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="../assets/demo/demo.css" rel="stylesheet" />
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="../vendors/fontawesome-free-5.8.1-web/js/all.min.js"></script>
+    <script src="../vendors/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body ng-app="myApp">
+
+    <div class="container-fluid" ng-controller="mainController">
+        <table style="height: 86px;" width="100%">
+            <tbody>
+                <tr>
+                    <td style="width: 1020.8px;">
+                        <p style="text-align: center;"><strong>INTERNATIONAL ISLAMIC UNIVERSITY, ISLAMABAD</strong><strong><br /> </strong><strong>FACULTY OF BASIC AND APPLIED SCIENCES</strong></p>
+                        <p style="text-align: center;"><strong>DEPARTMENT OF COMPUTER SCIENCE &amp;SOFTWARE ENGINEERING</strong></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p><strong>&nbsp;</strong></p>
+
+
+        <p>&nbsp;</p>
+        <p>&nbsp;&nbsp;</p>
+        <p style="text-align: center;"><strong><u>BS FINAL YEAR PROJECT</u></strong></p>
+        <p style="text-align: center;"><strong><u>Supervisory Demo Evaluation Form</u></strong></p>
+        <p>&nbsp;</p>
+        <div ng-repeat="row in Demos | filter: tablefilter" ng-if="row.GroupId==grpIDD">
+            <p style="text-align: justify;" ng-repeat="p in Project" ng-if="p.GroupId==row.GroupId"><strong>Project Title:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{p.Title}} </strong></p>
+            <p style="text-align: justify;"><strong>&nbsp;</strong></p>
+            <p style="text-align: justify;"><strong>Date:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{row.Date}}</strong></p>
+            <p style="text-align: justify;"><strong>&nbsp;</strong></p>
+            <p style="text-align: justify;"><strong>Particulars of Student (s)</strong></p>
+            <p><strong>&nbsp;</strong></p>
+            <p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <u>Registration Number</u></strong></p>
+            <p><strong>&nbsp;</strong></p>
+            <ol>
+                <li ng-repeat="r in result" ng-if="r.Id==row.GroupId" ><strong> <u>{{r.RegNo1}}</u></strong></li>
+                <li ng-repeat="r in result" ng-if="r.Id==row.GroupId"><strong><u>{{r.RegNo2}}</u></strong></li>
+                <li ng-repeat="r in result" ng-if="r.Id==row.GroupId"><strong><u> {{r.Regno3}}</u></strong></li>
+            </ol>
+            <p><strong>&nbsp;</strong></p>
+            <p><strong>Evaluated By:</strong></p>
+            <p><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Name</strong></p>
+            <p><strong>&nbsp;</strong></p>
+            <ol ng-repeat="pan in Panels" ng-if="pan.Id==row.PanelId">
+                <li><strong>{{pan.Teacher1}} </strong></li>
+                <li><strong>{{pan.Teacher2}} </strong></li>
+                <li><strong>{{pan.Teacher3}} </strong></li>
+            </ol>
+            <p><strong>&nbsp;</strong></p>
+            <p><strong>Commented and Changes Recommended:</strong></p>
+            <p><ul><li><strong>{{row.Remarks}}</strong></li></ul><br></p>
+            <p><strong>&nbsp;</strong></p>
+            <p><strong>Marks out of 40:&nbsp; <u>{{row.Marks}}</u></strong></p>
+            <p><strong>Ready of External Exam:&nbsp;&nbsp; Yes</strong></p>
+            <p><strong>&nbsp;</strong></p>
+            <div style="float:right">
+                <p><strong>_____________________</strong></p>
+                <p><strong>(Acting Chairperson, DCS &amp; SE)</strong></p>
+                <p><strong>&nbsp;</strong></p>
+                <p><strong>&nbsp;</strong></p>
+                <p><strong>&nbsp;</strong></p>
+                <p>&nbsp;</p>
+            </div>
+        </div>
+
+        <table width="100%">
+            <tbody>
+                <tr>
+                    <td>
+                        <p style="text-align: center;"><strong>INTERNATIONAL ISLAMIC UNIVERSITY, ISLAMABAD</strong><strong><br /> </strong><strong>FACULTY OF BASIC AND APPLIED SCIENCES</strong></p>
+                        <p style="text-align: center;"><strong>DEPARTMENT OF COMPUTER SCIENCE &amp;SOFTWARE ENGINEERING</strong></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p style="text-align: center;"><strong><u>BS FINAL YEAR PROJECT</u></strong></p>
+        <p style="text-align: center;"><strong><u>Internal/External Examiners&rsquo; Evaluation Form</u></strong></p>
+        <p>&nbsp;</p>
+        <div ng-repeat="row in Demo | filter: tablefilter"ng-if="row.GroupId==grpIDD">
+            <p style="text-align: justify;" ng-repeat="p in Project" ng-if="p.GroupId==row.GroupId"><strong>Project Title:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{p.Title}} </strong></p>
+            <p><strong>&nbsp;</strong></p>
+            <p style="text-align: justify;"><strong>Date:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{row.date}}</strong></p>
+            <p><strong>&nbsp;</strong></p>
+            <p><strong>Particulars of Student (s)</strong></p>
+            <p><strong>&nbsp;</strong></p>
+            <p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <u>Name</u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <u>Registration Number</u></strong></p>
+            <p><strong>&nbsp;</strong></p>
+            <ol>
+                <li ng-repeat="r in result" ng-if="r.Id==row.GroupId"><strong> <u>{{r.RegNo1}}</u></strong></li>
+                <li ng-repeat="r in result" ng-if="r.Id==row.GroupId"><strong><u>{{r.RegNo2}}</u></strong></li>
+                <li ng-repeat="r in result" ng-if="r.Id==row.GroupId"><strong><u> {{r.Regno3}}</u></strong></li>
+            </ol>
+            <p><strong>&nbsp;</strong></p>
+            <p><strong>Evaluated By:</strong></p>
+            <p><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Name&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <u>Signatures of Examiners:</u></strong></p>
+            <p><strong>&nbsp;</strong></p>
+            <ol ng-repeat="pan in Panels" ng-if="pan.Id==row.PanelId">
+                <li><strong>{{pan.Teacher1}} </strong></li>
+                <li><strong>{{pan.Teacher2}} </strong></li>
+                <li><strong>{{pan.Teacher3}} </strong></li>
+            </ol>
+            <p><strong>&nbsp;</strong></p>
+            <p><strong>Commented and Changes Recommended:</strong></p>
+            <p><ul><li><strong>{{row.Remarks}}</strong></li></ul><br></p>
+            <table width="100%">
+                <tbody>
+                    <tr style="height: 35.2px;">
+                        <td style="height: 35.2px;"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><strong>Developed Application/Results:&nbsp; </strong></p>
+            <p><strong>Questions/Answers:&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong><strong>=</strong> &nbsp; &nbsp; &nbsp; &nbsp; <strong>30/</strong><strong>{{row.QA}}</strong></p>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><strong>Presentation:</strong></p>
+            <p><strong>Documentation:&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong><strong>=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong>&nbsp;   <strong>30/</strong><strong>{{row.Documentation}}</strong></p>
+            <p><strong>&nbsp;</strong></p>
+            <p>&nbsp;</p>
+            <p><strong>Marks out of 60:&nbsp; </strong> <strong>{{row.Marks}}</strong></p>
+            <div style="float:right">
+                <p><strong>_____________________</strong></p>
+                <p><strong>(Acting Chairperson, DCS &amp; SE)</strong></p>
+                <p><strong>&nbsp;</strong></p>
+            </div>
+            <br><br><br><br>
+            <div class="container">
+                <button class="btn btn-success d-print-none" onclick="window.print()" style="float:right;margin-right:50px;">Download</button>
+            </div>
+        </div>
+        </div>
+    <script>
+        var userid
+        $(document).ready(function () {
+            
+            userid = sessionStorage.getItem('groupid');
+            console.log(userid);
+
+        });
+        var app = angular.module('myApp', []);
+        app.controller('mainController', function ($scope, $http, $filter) {
+
+            //Getting Announcements
+            var onsuccess = function (data, header, status, config) {
+                $scope.Demo = data;
+                $scope.Panel = pnlid;
+                $scope.Empty = null;
+                
+                console.log(grpIDD);
+            }
+            var onerror = function (data, header, status, config) {
+                swal("error in getting users!, status code : " + status);
+            }
+            var promise = $http.get('/api/InternalExternals');
+            promise.success(onsuccess);
+            promise.error(onerror);
+         
+             var onsuccess = function (data, header, status, config) {
+                $scope.Demos = data;
+                 $scope.grpIDD = userid;
+
+            }
+            var onerror = function (data, header, status, config) {
+                swal("error in getting users!, status code : " + status);
+            }
+            var promise = $http.get('/api/SupervisoryDemoes');
+            promise.success(onsuccess);
+            promise.error(onerror);
+            //Getting Regno
+            var onsuccess = function (data, header, status, config) {
+                $scope.result = data;
+
+
+            }
+            var onerror = function (data, header, status, config) {
+                swal("error in getting users!, status code : " + status);
+            }
+            var promise = $http.get('/api/Groups');
+            promise.success(onsuccess);
+            promise.error(onerror);
+
+            //Getting Projects
+            var onsuccess = function (data, header, status, config) {
+                $scope.Project = data;
+
+
+            }
+            var onerror = function (data, header, status, config) {
+                swal("error in getting users!, status code : " + status);
+            }
+            var promise = $http.get('/api/Projects');
+            promise.success(onsuccess);
+            promise.error(onerror);
+
+
+            //Getting Panel
+            var onsuccess = function (data, header, status, config) {
+                $scope.Panels = data;
+
+
+            }
+            var onerror = function (data, header, status, config) {
+                swal("error in getting users!, status code : " + status);
+            }
+            var promise = $http.get('/api/Panels');
+            promise.success(onsuccess);
+            promise.error(onerror);
+
+            $scope.deleteProject = function (id) {
+                var onsuccess = function (data, header, status, config) {
+
+                    swal({
+                        text: "Delete SuccessFully",
+                        type: "success",
+                        buttons: {
+                            ok: true
+                        }
+
+                    }).then(val => {
+                        if (val) {
+                            location.reload();
+                        }
+                    });
+
+
+                }
+                var onerror = function (data, header, status, config) {
+                    swal({
+                        text: "Deleting failed",
+                        type: "warning",
+                        buttons: {
+                            ok: true
+                        }
+                    });
+                }
+                var promise = $http.delete('/api/InternalExternals/' + id);
+                promise.success(onsuccess);
+                promise.error(onerror);
+            }
+
+            $scope.editProject = function (id) {
+
+                var onsuccess = function (data, header, status, config) {
+
+                    ID = data.Id,
+
+
+
+                        $scope.UGroupId = data.GroupId,
+
+                        $scope.UDocumentation = data.Documentation,
+                        $scope.UQA = data.QA,
+                        $scope.URemarks = data.Remarks
+
+
+                }
+                var onerror = function (data, header, status, config) {
+                    swal("error in getting users!, status code : " + status);
+                }
+                var promise = $http.get('/api/InternalExternals/' + id);
+                promise.success(onsuccess);
+                promise.error(onerror);
+
+            }
+
+            $scope.ULogic = function () {
+
+                $http.get('/api/Groups').then(function (response) {
+
+                    var data = response.data;
+                    for (var x in data) {
+                        var abc = data[x].RegNo1 + " " + data[x].RegNo2 + " " + data[x].Regno3;
+
+                        if ($("#UGroupId option:checked").text() == abc) {
+
+                            ugrpid = data[x].Id;
+                            console.log(ugrpid);
+                        }
+
+                    }
+
+                });
+
+                $http.get('/api/Panels').then(function (response) {
+
+                    var data = response.data;
+                    for (var x in data) {
+
+                        if (grpid == data[x].GroupId1 || grpid == data[x].GroupId2 || grpid == data[x].GroupId3 || grpid == data[x].GroupId4 || grpid == data[x].GroupId5 || grpid == data[x].GroupId6 || grpid == data[x].GroupId7 || grpid == data[x].GroupId8 || grpid == data[x].GroupId9 || grpid == data[x].GroupId10) {
+
+                            pnlId = data[x].Id;
+                            console.log(pnlId);
+                        }
+                    }
+
+
+
+
+                    $scope.UpdateAnnouncement();
+                });
+            }
+
+
+
+          
+
+
+
+            $scope.UpdateAnnouncement = function () {
+                var q = $scope.UQA;
+                var d = $scope.UDocumentation;
+                var s = d + q;
+                var ann = {
+                    "Id": ID,
+                    "Marks": s,
+                    "Remarks": $scope.URemarks,
+                    "PanelId": pnlId,
+                    "GroupId": ugrpid,
+                    "Date": date,
+                    "QA": $scope.UQA,
+                    "Documentation": $scope.UDocumentation
+
+                };
+                console.log(ugrpid);
+                console.log(ann);
+                var onsuccess = function (data, status, headers, config) {
+
+
+                    swal({
+                        text: "Updated successfully!",
+                        type: "success",
+                        buttons: { ok: true }
+                    }).then(val => {
+                        if (val) {
+                            location.reload();
+                        }
+                    });
+
+
+
+                };
+                var onerror = function (data, header, status, config) {
+                    swal("Error in Updation User Details!, status code : " + status);
+
+                }
+
+                var promise = $http.put('/api/InternalExternals/' + ID, ann);
+                promise.success(onsuccess);
+                promise.error(onerror);
+
+            };
+
+            $scope.Logic = function () {
+                $http.get('/api/Groups').then(function (response) {
+
+                    var data = response.data;
+                    for (var x in data) {
+                        var abc = data[x].RegNo1 + " " + data[x].RegNo2 + " " + data[x].Regno3;
+
+                        if ($("#GroupId option:checked").text() == abc) {
+                            grpid = data[x].Id;
+                            console.log(grpid);
+                        }
+
+                    }
+                });
+                console.log("here");
+                $http.get('/api/Panels').then(function (response) {
+
+                    var data = response.data;
+                    for (var x in data) {
+
+                        if (grpid == data[x].GroupId1 || grpid == data[x].GroupId2 || grpid == data[x].GroupId3 || grpid == data[x].GroupId4 || grpid == data[x].GroupId5 || grpid == data[x].GroupId6 || grpid == data[x].GroupId7 || grpid == data[x].GroupId8 || grpid == data[x].GroupId9 || grpid == data[x].GroupId10) {
+
+                            pnlId = data[x].Id;
+                            console.log(pnlId);
+                        }
+                    }
+
+
+
+
+                    $scope.Register();
+                });
+
+            }
+
+
+            $scope.Register = function () {
+                var q = $scope.QA;
+                var d = $scope.Documentation;
+                var s = d + q;
+
+                var marks = {
+                    "Marks": s,
+                    "Remarks": $scope.Remarks,
+                    "PanelId": pnlId,
+                    "GroupId": grpid,
+                    "Date": date,
+                    "QA": $scope.QA,
+                    "Documentation": $scope.Documentation
+                };
+
+
+                console.log(marks);
+
+
+                var onSuccess = function (data, status, headers, config) {
+                    swal({
+                        text: " Marks Successfully Uploaded",
+                        type: "success",
+                        buttons: { ok: true }
+                    }).then(val => {
+                        if (val) {
+                            location.reload();
+                        }
+                    });
+
+
+
+                };
+                var onError = function (data, status, headers, config) {
+
+                    swal({
+                        text: "Marks Registration unsuccessful!" + status,
+                        type: "warning",
+                        buttons: { ok: true }
+                    });
+
+                };
+
+                var promise = $http.post('/api/InternalExternals', marks);
+                debugger;
+                promise.success(onSuccess);
+                promise.error(onError);
+            };
+
+
+
+
+            $scope.Update = function () {
+                var admin = {
+                    "Id": id,
+                    "Name": name,
+                    "DOB": dob,
+                    "Address": address,
+                    "Phone": phone,
+                    "UserName": username,
+                    "Password": $scope.Password,
+                    "Email": email,
+
+                };
+                console.log(admin);
+
+
+                var onsuccess = function (data, status, headers, config) {
+
+
+                    swal({
+                        text: "Password Changed!",
+                        type: "success",
+                        buttons: { ok: true }
+                    }).then(val => {
+                        sessionStorage.removeItem('admlgn');
+                        location.reload();
+                    });
+
+
+
+                };
+
+                var onerror = function (data, header, status, config) {
+                    swal("error in getting users!, status code : " + status);
+
+                }
+
+                var promise = $http.put('/api/Admins/' + id, admin);
+                promise.success(onsuccess);
+                promise.error(onerror);
+
+            };
+
+
+
+
+        });
+    </script>
+</body>
+
+</html>
